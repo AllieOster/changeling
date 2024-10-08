@@ -3,7 +3,14 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Dormitory
+  - Attick
+  - Kitchen
+  - Theater
+  - Lobby
+  - GlobalView
+  - Bedroom
   layers:
   - Default
   - TransparentFX
