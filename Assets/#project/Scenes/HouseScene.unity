@@ -172,6 +172,8 @@ MonoBehaviour:
   kitchenCamera: {fileID: 1839440424}
   theaterCamera: {fileID: 1848882356}
   lobbyCamera: {fileID: 911262154}
+  uiElements: {fileID: 1993370572}
+  roomColliders: {fileID: 40670025}
 --- !u!1 &40670025
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +336,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170, y: -281}
+  m_AnchoredPosition: {x: -185, y: -281}
   m_SizeDelta: {x: 440.841, y: 337.947}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &149798895
@@ -619,7 +621,7 @@ GameObject:
   - component: {fileID: 172036405}
   - component: {fileID: 172036404}
   m_Layer: 5
-  m_Name: Image
+  m_Name: RomeoStatic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -641,7 +643,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -490.4, y: -243.5}
+  m_AnchoredPosition: {x: -508, y: -243.5}
   m_SizeDelta: {x: 137.21, y: 162.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &172036404
@@ -961,6 +963,7 @@ GameObject:
   - component: {fileID: 639032676}
   - component: {fileID: 639032675}
   - component: {fileID: 639032674}
+  - component: {fileID: 639032677}
   m_Layer: 5
   m_Name: Button
   m_TagString: GlobalView
@@ -1031,7 +1034,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 639032675}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 639032677}
+        m_TargetAssemblyTypeName: ButtonSwitchToGlobal, Assembly-CSharp
+        m_MethodName: OnButtonClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OnButtonClicked
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &639032675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,6 +1085,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639032672}
   m_CullTransparentMesh: 1
+--- !u!114 &639032677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639032672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41cfe9a2a071534499003fc49527c8c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraManager: {fileID: 27504706}
 --- !u!1 &735140334
 GameObject:
   m_ObjectHideFlags: 0
@@ -1504,7 +1532,7 @@ GameObject:
   - component: {fileID: 992855538}
   - component: {fileID: 992855537}
   m_Layer: 5
-  m_Name: Image
+  m_Name: RomeoFrame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1526,7 +1554,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -501.4, y: -248.1}
+  m_AnchoredPosition: {x: -519, y: -248.1}
   m_SizeDelta: {x: 208.847, y: 213.201}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &992855537
@@ -2811,7 +2839,7 @@ GameObject:
   - component: {fileID: 1993370574}
   - component: {fileID: 1993370573}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UIElements
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
