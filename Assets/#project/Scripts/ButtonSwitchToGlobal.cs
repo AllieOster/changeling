@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ButtonSwitchToGlobal : MonoBehaviour
 {
-    public CameraManager cameraManager;
+    public CameraManager cameraManager; // why the hell Serialized won't work ?! 
     void Start()
     {
         Button button = GetComponent<Button>();
@@ -14,7 +14,7 @@ public class ButtonSwitchToGlobal : MonoBehaviour
 
     public void OnButtonClick()
     {
-        if (cameraManager != null)
+        if (cameraManager != null) // I've seen this like EVERYWHERE but is this really necessary ?! 
         {
             cameraManager.SetCameraActive(cameraManager.globalViewCamera);
         }

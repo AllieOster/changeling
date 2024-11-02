@@ -1,5 +1,15 @@
 using UnityEngine;
 
+    /*
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻🦋༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                                    The Room Click Detector
+
+        ❤ Start : Find the camera manager (ask if ok : serialized/public didn't work)
+        ❤ OnMouseDown : Check collider clicked and change to the right Camera
+
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    */
+
 public class RoomClickDetector : MonoBehaviour
 {
     private CameraManager cameraManager;
@@ -9,12 +19,10 @@ public class RoomClickDetector : MonoBehaviour
         cameraManager = FindObjectOfType<CameraManager>();
     }
 
-    void OnMouseDown()
+    void OnMouseDown() // why couln't I make a switch there ?! 
     {
         if (cameraManager != null)
         {
-            Debug.Log("Clické sur " + gameObject.name + " avec le tag " + gameObject.tag);
-
             if (CompareTag("Attick"))
             {
                 cameraManager.SetCameraActive(cameraManager.attickCamera);
