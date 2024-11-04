@@ -1,6 +1,5 @@
 using UnityEngine;
 using Cinemachine;
-
     /*
     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻🦋༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
                                     The Camera Manager
@@ -11,7 +10,6 @@ using Cinemachine;
 
     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     */
-
 public class CameraManager : MonoBehaviour
 {
     /*
@@ -19,7 +17,7 @@ public class CameraManager : MonoBehaviour
        References to the Cameras 
     ┗━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━┛
      */
-    public CinemachineVirtualCamera globalViewCamera; // public parce qu'en SerializeField il refusait d'accéder aux cameras ; demander pourquoi.
+    public CinemachineVirtualCamera globalViewCamera;
     public CinemachineVirtualCamera dormitoryCamera;
     public CinemachineVirtualCamera attickCamera;
     public CinemachineVirtualCamera kitchenCamera;
