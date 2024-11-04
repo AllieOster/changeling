@@ -13,10 +13,9 @@ using UnityEngine;
 public class RoomClickDetector : MonoBehaviour
 {
     private CameraManager cameraManager;
-
     void Start()
     {
-        cameraManager = FindObjectOfType<CameraManager>();
+        cameraManager = FindObjectOfType<CameraManager>(); // ??? 
     }
 
     void OnMouseDown() // why couln't I make a switch there ?! 
