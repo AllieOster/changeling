@@ -1,5 +1,4 @@
 using UnityEngine;
-
     /*
     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻🦋༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
                                     The Room Click Detector
@@ -9,38 +8,40 @@ using UnityEngine;
 
     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     */
-
-public class RoomClickDetector : MonoBehaviour
+public class ZoomRooms : MonoBehaviour
 {
     private CameraManager cameraManager;
     void Start()
     {
+<<<<<<< HEAD
         cameraManager = FindObjectOfType<CameraManager>(); // ??? 
+=======
+        cameraManager = FindObjectOfType<CameraManager>(); 
+>>>>>>> 860cee4f2d0c783138c1f57eba5170caf38136fb
     }
-
-    void OnMouseDown() // why couln't I make a switch there ?! 
+    void OnMouseDown()
     {
-        if (cameraManager != null)
+        if (cameraManager != null) 
         {
-            if (CompareTag("Attick"))
+            switch (gameObject.tag) 
             {
-                cameraManager.SetCameraActive(cameraManager.attickCamera);
-            }
-            else if (CompareTag("Dormitory"))
-            {
-                cameraManager.SetCameraActive(cameraManager.dormitoryCamera);
-            }
-            else if (CompareTag("Kitchen"))
-            {
-                cameraManager.SetCameraActive(cameraManager.kitchenCamera);
-            }
-            else if (CompareTag("Theater"))
-            {
-                cameraManager.SetCameraActive(cameraManager.theaterCamera);
-            }
-            else if (CompareTag("Lobby"))
-            {
-                cameraManager.SetCameraActive(cameraManager.lobbyCamera);
+                case "Attick":
+                    cameraManager.SetCameraActive(cameraManager.attickCamera);
+                    break;
+                case "Dormitory":
+                    cameraManager.SetCameraActive(cameraManager.dormitoryCamera);
+                    break;
+                case "Kitchen":
+                    cameraManager.SetCameraActive(cameraManager.kitchenCamera);
+                    break;
+                case "Theater":
+                    cameraManager.SetCameraActive(cameraManager.theaterCamera);
+                    break;
+                case "Lobby":
+                    cameraManager.SetCameraActive(cameraManager.lobbyCamera);
+                    break;
+                default:
+                    break;
             }
         }
     }
