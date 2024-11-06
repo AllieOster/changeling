@@ -1,15 +1,16 @@
 using UnityEngine;
 using Cinemachine;
-    /*
-    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻🦋༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
-                                    The Camera Manager
+using Unity.VisualScripting;
+/*
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻🦋༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                                The Camera Manager
 
-        ❤ Start : Set to GlobalView on start 
-        ❤ SetCameraActive : Changing the camera 
-        ❤ ActivateUI : Activate UI if not Glovalview, Activate colliders if GlobalView
+    ❤ Start : Set to GlobalView on start 
+    ❤ SetCameraActive : Changing the camera 
+    ❤ ActivateUI : Activate UI if not Glovalview, Activate colliders if GlobalView
 
-    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-    */
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+*/
 public class CameraManager : MonoBehaviour
 {
     /*
@@ -23,6 +24,7 @@ public class CameraManager : MonoBehaviour
     public CinemachineVirtualCamera kitchenCamera;
     public CinemachineVirtualCamera theaterCamera;
     public CinemachineVirtualCamera lobbyCamera;
+    public CinemachineVirtualCamera boardCamera;
     private CinemachineVirtualCamera activeCamera;
     /*
     ┏━━━━━━━━━━━━━━༻🦋༺━━━━━━━━━━━━━━━┓
@@ -40,6 +42,7 @@ public class CameraManager : MonoBehaviour
     ┗━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━┛
     */
     public GameObject roomColliders;
+    public GameObject boardCollider;
     /*
     ┏━━━━━━━━━━━━━━━━━༻🦋༺━━━━━━━━━━━━━━━━━┓
         Start : 
@@ -53,6 +56,7 @@ public class CameraManager : MonoBehaviour
         SetCameraActive(globalViewCamera);
         uiElements.SetActive(false); 
         roomColliders.SetActive(true);
+        boardCollider.SetActive(false);
     }
     /*
     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻🦋༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
@@ -71,14 +75,21 @@ public class CameraManager : MonoBehaviour
             activeCamera.Priority = 10; 
             uiElements.SetActive(false); 
             roomColliders.SetActive(true);
+            boardCollider.SetActive(false);
         }
         
+
         activeCamera = cameraToActivate; 
         activeCamera.Priority = 20; 
 
         if (cameraToActivate != globalViewCamera)
         {
             Invoke("ActivateUI", 2f); 
+        }
+        if(activeCamera == lobbyCamera)
+        {
+            boardCollider.SetActive(true); 
+            Debug.Log("activated !");
         }
     }
     /*

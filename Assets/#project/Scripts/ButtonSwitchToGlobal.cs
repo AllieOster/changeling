@@ -13,7 +13,7 @@ public class ButtonSwitchToGlobal : MonoBehaviour
     }
     public void OnButtonClick()
     {
-        if (cameraManager != null) // I've seen this like EVERYWHERE but is this really necessary ?! 
+        if (cameraManager != null)
         {
             cameraManager.SetCameraActive(cameraManager.globalViewCamera);
         }

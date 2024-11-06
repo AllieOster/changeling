@@ -13,11 +13,7 @@ public class ZoomRooms : MonoBehaviour
     private CameraManager cameraManager;
     void Start()
     {
-<<<<<<< HEAD
-        cameraManager = FindObjectOfType<CameraManager>(); // ??? 
-=======
         cameraManager = FindObjectOfType<CameraManager>(); 
->>>>>>> 860cee4f2d0c783138c1f57eba5170caf38136fb
     }
     void OnMouseDown()
     {
@@ -39,6 +35,10 @@ public class ZoomRooms : MonoBehaviour
                     break;
                 case "Lobby":
                     cameraManager.SetCameraActive(cameraManager.lobbyCamera);
+                    break;
+                case "Board":
+                    cameraManager.SetCameraActive(cameraManager.boardCamera);
+                    Debug.Log("clicked on board");
                     break;
                 default:
                     break;

@@ -10,6 +10,7 @@ TagManager:
   - Theater
   - Lobby
   - GlobalView
+  - Board
   layers:
   - Default
   - TransparentFX
