@@ -38,7 +38,6 @@ public class ZoomRooms : MonoBehaviour
                     break;
                 case "Board":
                     cameraManager.SetCameraActive(cameraManager.boardCamera);
-                    Debug.Log("clicked on board");
                     break;
                 default:
                     break;
