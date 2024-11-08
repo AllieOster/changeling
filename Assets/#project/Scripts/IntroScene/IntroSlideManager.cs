@@ -5,56 +5,61 @@ using UnityEngine;
 
 public class IntroSlideManager : MonoBehaviour
 {
-    [SerializeField] public CinemachineVirtualCamera[] cameras;
-    public CinemachineVirtualCamera activeCamera;
-    public GameObject buttonLeft;
-    public GameObject buttonRight;
-    public GameObject buttonNextScene;
+    [SerializeField] public CinemachineVirtualCamera[] cameras; // 📷
+    public CinemachineVirtualCamera activeCamera; // 📷
+    public GameObject buttonLeft; // 📌
+    public GameObject buttonRight; // 📌
+    public GameObject buttonNextScene; // 📌
     public int currentCamera = 0;
-    // Start is called before the first frame update
     void Awake()
     {
-        buttonLeft.SetActive(false);
-        buttonNextScene.SetActive(false);
-        SetCameraActive(cameras[0]);
+        buttonLeft.SetActive(false); // 📌
+        buttonNextScene.SetActive(false); // 📌
+        SetCameraActive(cameras[0]); // 📷
+        LevelManager.SetGameState(GameState.Intro);
+        Debug.Log($"State : {LevelManager.CurrentState}");
     }
 
     public void SetCameraActive(CinemachineVirtualCamera cameraToActivate)
     {
-        if (activeCamera != null)
+        if (activeCamera != null) // 📷
         {
-            activeCamera.Priority = 10; 
+            activeCamera.Priority = 10; // 📷
         }      
 
-        activeCamera = cameraToActivate; 
-        activeCamera.Priority = 20; 
+        activeCamera = cameraToActivate; // 📷
+        activeCamera.Priority = 20; // 📷
 
-        if (activeCamera != cameras[0])
+        if (activeCamera != cameras[0]) // 📷
         {
-            Invoke("ActivateLeftButton", 2f);
+            Invoke("ActivateLeftButton", 2f); // 📌
         }
         else {
             buttonLeft.SetActive(false);
         }
 
-        if (activeCamera != cameras[7])
+        if (activeCamera != cameras[7]) // 📷
         {
-            Invoke("ActivateRightButton", 2f);
-            buttonNextScene.SetActive(false);
+            Invoke("ActivateRightButton", 2f); // 📌
+            buttonNextScene.SetActive(false); // 📌
         }
         else
         {
-            buttonNextScene.SetActive(true);
-            buttonRight.SetActive(false);
+            Invoke("ActivateLoadNextSceneButton", 2f); // 📌
+            buttonRight.SetActive(false); // 📌
         }
     }
 
-    public void ActivateRightButton()
+    public void ActivateRightButton() // 📌
     {
-        buttonRight.SetActive(true);
+        buttonRight.SetActive(true); // 📌
     }
-    public void ActivateLeftButton()
+    public void ActivateLeftButton() // 📌
     {
-        buttonLeft.SetActive(true);
+        buttonLeft.SetActive(true); // 📌
+    }
+    public void ActivateLoadNextSceneButton() // 📌
+    {
+        buttonNextScene.SetActive(true); // 📌
     }
 }

@@ -190,7 +190,7 @@ GameObject:
   - component: {fileID: 32815099}
   m_Layer: 0
   m_Name: Isometric Diamond
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -464,7 +464,7 @@ GameObject:
   - component: {fileID: 120874605}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1100,7 +1100,7 @@ GameObject:
   - component: {fileID: 377479084}
   m_Layer: 0
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1318,8 +1318,8 @@ GameObject:
   - component: {fileID: 420410957}
   - component: {fileID: 420410956}
   m_Layer: 0
-  m_Name: Capsule
-  m_TagString: Untagged
+  m_Name: obj2
+  m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1612,7 +1612,7 @@ GameObject:
   - component: {fileID: 531274171}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1912,7 +1912,7 @@ GameObject:
   - component: {fileID: 600081999}
   m_Layer: 0
   m_Name: Hexagon Pointed-Top
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2062,7 +2062,7 @@ GameObject:
   - component: {fileID: 608342629}
   m_Layer: 0
   m_Name: Hexagon Flat-Top
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2356,7 +2356,7 @@ GameObject:
   - component: {fileID: 687210441}
   m_Layer: 0
   m_Name: QuestObjectsLvl1
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2392,7 +2392,7 @@ GameObject:
   - component: {fileID: 725929489}
   m_Layer: 0
   m_Name: QuestObjectsLvl2
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2761,7 +2761,7 @@ GameObject:
   - component: {fileID: 961479155}
   m_Layer: 0
   m_Name: Isometric Diamond
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3435,7 +3435,7 @@ GameObject:
   - component: {fileID: 1169208851}
   m_Layer: 0
   m_Name: Isometric Diamond
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3654,8 +3654,8 @@ GameObject:
   - component: {fileID: 1197610969}
   - component: {fileID: 1197610968}
   m_Layer: 0
-  m_Name: Circle1
-  m_TagString: Untagged
+  m_Name: obj1
+  m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3789,7 +3789,7 @@ GameObject:
   - component: {fileID: 1248005562}
   m_Layer: 0
   m_Name: 9-Sliced
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3953,7 +3953,7 @@ GameObject:
   - component: {fileID: 1269128314}
   m_Layer: 0
   m_Name: Hexagon Pointed-Top
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4103,7 +4103,7 @@ GameObject:
   - component: {fileID: 1276661863}
   m_Layer: 0
   m_Name: 9-Sliced
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4303,7 +4303,7 @@ GameObject:
   - component: {fileID: 1327835000}
   m_Layer: 0
   m_Name: Hexagon Pointed-Top
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5237,7 +5237,7 @@ GameObject:
   - component: {fileID: 1752657249}
   m_Layer: 0
   m_Name: QuestObjectsLvl3
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5598,7 +5598,7 @@ GameObject:
   - component: {fileID: 1862695119}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

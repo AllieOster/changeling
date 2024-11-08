@@ -28,8 +28,8 @@ public class CameraManager : MonoBehaviour
     {
         SetCameraActive(globalViewCamera); // 📷
         uiElements.SetActive(false); // 📌
-        roomColliders.SetActive(true);
-        boardCollider.SetActive(false);
+        roomColliders.SetActive(true); // 🔍
+        boardCollider.SetActive(false); // 🔍
     }
     public void SetCameraActive(CinemachineVirtualCamera cameraToActivate)
     {
@@ -40,7 +40,6 @@ public class CameraManager : MonoBehaviour
             roomColliders.SetActive(true); // 🔍
             boardCollider.SetActive(false); // 🔍
         }
-        
 
         activeCamera = cameraToActivate; // 📷
         activeCamera.Priority = 20; // 📷
@@ -51,7 +50,7 @@ public class CameraManager : MonoBehaviour
         }
         if(activeCamera == lobbyCamera) // 📷
         {
-            boardCollider.SetActive(true); 
+            boardCollider.SetActive(true); // 🔍
         }
     }
     private void ActivateUI()

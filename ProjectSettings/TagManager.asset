@@ -11,6 +11,9 @@ TagManager:
   - Lobby
   - GlobalView
   - Board
+  - QuestItemsLvl1
+  - QuestItemsLvl2
+  - QuestItemsLvl3
   layers:
   - Default
   - TransparentFX

@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class NextSceneButton : MonoBehaviour
 {
     public LoadSceneManager loadSceneManager;
-
     void Start()
     {
         Button button = GetComponent<Button>();
@@ -14,10 +13,13 @@ public class NextSceneButton : MonoBehaviour
     }
     void OnButtonClick()
     {
-        Invoke("LoadNextScene", 2f);
+        Invoke("LoadLvl1", 2f);
     }
 
-    void LoadNextScene(){
+    void LoadLvl1()
+    {
+        LevelManager.SetGameState(GameState.Lvl1);
+        Debug.Log($"State = {LevelManager.CurrentState}");
         loadSceneManager.ChangeScene("HouseScene");
     }
 }

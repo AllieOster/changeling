@@ -11,7 +11,6 @@ public class ButtonRight : MonoBehaviour
         Button button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonClick);
         Debug.Log(introslide != null ? "IntroSlideManager est assigné." : "IntroSlideManager est null.");
-
     }
     public void OnButtonClick()
     {

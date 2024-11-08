@@ -7,11 +7,11 @@ using UnityEngine.UIElements;
 public class InventoryManager : MonoBehaviour
 {
     [SerializeField] GameObject[] slots; 
-    private int currentSlot = 0;
+    public int currentSlot = 0;
 
     public void AddToInventory(GameObject item)
     {
-        Debug.Log("Tried to add");
+        Debug.Log("AddToInventory Activated");
         SpriteRenderer itemSprite = item.GetComponent<SpriteRenderer>();
         
         if (itemSprite == null)
