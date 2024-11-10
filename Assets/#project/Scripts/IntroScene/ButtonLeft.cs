@@ -15,7 +15,8 @@ public class ButtonLeft : MonoBehaviour
     {
         if (introslide != null)
         {
-            Debug.Log("IntroSlideManager est actif.");
+            introslide.buttonLeft.SetActive(false);
+            introslide.buttonRight.SetActive(false);
             if (introslide.currentCamera != 0)
             {
                 introslide.currentCamera--;

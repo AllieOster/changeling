@@ -25,41 +25,57 @@ public class IntroSlideManager : MonoBehaviour
         if (activeCamera != null) // 📷
         {
             activeCamera.Priority = 10; // 📷
-        }      
+        }
 
         activeCamera = cameraToActivate; // 📷
         activeCamera.Priority = 20; // 📷
 
-        if (activeCamera != cameras[0]) // 📷
-        {
-            Invoke("ActivateLeftButton", 2f); // 📌
-        }
-        else {
-            buttonLeft.SetActive(false);
-        }
+        buttonLeft.SetActive(false);
+        buttonRight.SetActive(false);
+        buttonNextScene.SetActive(false);
 
-        if (activeCamera != cameras[7]) // 📷
+        if (activeCamera == cameras[0]) 
         {
-            Invoke("ActivateRightButton", 2f); // 📌
-            buttonNextScene.SetActive(false); // 📌
+            StartActivateButtonsWithDelay(false, true, false, 2f); 
+        }
+        else if (activeCamera == cameras[7]) 
+        {
+            StartActivateButtonsWithDelay(true, false, true, 2f); 
         }
         else
         {
-            Invoke("ActivateLoadNextSceneButton", 2f); // 📌
-            buttonRight.SetActive(false); // 📌
+            StartActivateButtonsWithDelay(true, true, false, 2f); 
         }
     }
+    public void ActivateButtons(bool left, bool right, bool nextscene)
+    {
+        if (left == true){
+            buttonLeft.SetActive(true);
+        }
+        if (left == false){
+            buttonLeft.SetActive(false);
+        }
+        if (right == true){
+            buttonRight.SetActive(true);
+        }
+        else{
+            buttonRight.SetActive(false);
+        }
+        if (nextscene == true){
+            buttonNextScene.SetActive(true);
+        }
+        else{
+            buttonNextScene.SetActive(false);
+        }
+    }
+    private IEnumerator ActivateButtonsCoroutine(bool left, bool right, bool nextscene, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ActivateButtons(left, right, nextscene);
+    }
 
-    public void ActivateRightButton() // 📌
+    public void StartActivateButtonsWithDelay(bool left, bool right, bool nextscene, float delay)
     {
-        buttonRight.SetActive(true); // 📌
-    }
-    public void ActivateLeftButton() // 📌
-    {
-        buttonLeft.SetActive(true); // 📌
-    }
-    public void ActivateLoadNextSceneButton() // 📌
-    {
-        buttonNextScene.SetActive(true); // 📌
+        StartCoroutine(ActivateButtonsCoroutine(left, right, nextscene, delay));
     }
 }

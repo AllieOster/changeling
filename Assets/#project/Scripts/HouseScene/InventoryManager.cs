@@ -8,6 +8,17 @@ using UnityEngine.UIElements;
 
 public class InventoryManager : MonoBehaviour
 {
+
+    /*
+    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻🦋༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+                                    The Inventory Manager
+
+        ❤ Add things into the inventory (change sprite for the item sprite)
+        ❤ Clear Inventory when full
+        ❤ Change GameState when full
+
+    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+    */
     [SerializeField] GameObject[] slots; 
     public int currentSlot = 0;
 
@@ -30,7 +41,7 @@ public class InventoryManager : MonoBehaviour
                 currentSlot++;
                 if (currentSlot == 5) 
                 {
-                    LevelManager.SetGameState(GameState.Lvl2); // 🦩🦩🦩 --> A changer pour intro le jour venu 
+                    LevelManager.SetGameState(GameState.Lvl2); // 🦩🦩🦩 --> A changer pour transition ??? 
                     Debug.Log("Lvl2 activated");
                     currentSlot = 0;
                     Invoke("ClearInventory", 2f);
@@ -50,7 +61,6 @@ public class InventoryManager : MonoBehaviour
                 slotSprite.sprite = null; 
             }
         }
-
         Debug.Log("Inventory cleared.");
     }
 }

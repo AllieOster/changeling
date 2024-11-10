@@ -10,13 +10,13 @@ public class ButtonRight : MonoBehaviour
     {
         Button button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonClick);
-        Debug.Log(introslide != null ? "IntroSlideManager est assigné." : "IntroSlideManager est null.");
     }
     public void OnButtonClick()
     {
         if (introslide != null)
         {
-            Debug.Log("IntroSlideManager est actif.");
+            introslide.buttonLeft.SetActive(false);
+            introslide.buttonRight.SetActive(false);
             if (introslide.currentCamera != 7)
             {
                 introslide.currentCamera++;
