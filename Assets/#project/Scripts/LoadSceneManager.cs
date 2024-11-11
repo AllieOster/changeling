@@ -1,9 +1,9 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // N'oubliez pas d'inclure cette ligne
+using UnityEngine.SceneManagement; 
 
-public class LoadSceneManager : MonoBehaviour
+public static class LoadSceneManager 
 {
-    public void ChangeScene(string sceneName)
+    public static void ChangeScene(string sceneName)
     {
         SceneManager.LoadScene(sceneName);
     }

@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NextSceneButton : MonoBehaviour
+public class ButtonToLvl2 : MonoBehaviour
 {
-    public LoadSceneManager loadSceneManager;
     void Start()
     {
         Button button = GetComponent<Button>();
@@ -13,13 +12,12 @@ public class NextSceneButton : MonoBehaviour
     }
     void OnButtonClick()
     {
-        Invoke("LoadLvl1", 2f);
+        Invoke("LoadLvl2", 2f);
     }
-
-    void LoadLvl1()
+    void LoadLvl2() // load dans lvl manager ??? 
     {
-        LevelManager.SetGameState(GameState.Lvl1);
+        LevelManager.SetGameState(GameState.Lvl2);
         Debug.Log($"State = {LevelManager.CurrentState}");
-        loadSceneManager.ChangeScene("HouseScene");
+        LoadSceneManager.ChangeScene("HouseScene");
     }
 }

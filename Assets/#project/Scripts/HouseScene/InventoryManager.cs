@@ -8,7 +8,6 @@ using UnityEngine.UIElements;
 
 public class InventoryManager : MonoBehaviour
 {
-
     /*
     ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻🦋༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
                                     The Inventory Manager
@@ -19,7 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     */
-    [SerializeField] GameObject[] slots; 
+    [SerializeField] GameObject[] slots;
     public int currentSlot = 0;
 
     public void AddToInventory(GameObject item)
@@ -39,15 +38,7 @@ public class InventoryManager : MonoBehaviour
                 slotSprite.sprite = itemSprite.sprite; 
                 item.SetActive(false);
                 currentSlot++;
-                if (currentSlot == 5) 
-                {
-                    LevelManager.SetGameState(GameState.Lvl2); // 🦩🦩🦩 --> A changer pour transition ??? 
-                    Debug.Log("Lvl2 activated");
-                    currentSlot = 0;
-                    Invoke("ClearInventory", 2f);
-                }
-                Debug.Log($"current slot = {currentSlot}");
-                return; 
+                checkIfInventoryFull();
             }
     }
     public void ClearInventory()
@@ -62,5 +53,40 @@ public class InventoryManager : MonoBehaviour
             }
         }
         Debug.Log("Inventory cleared.");
+    }
+
+    public void checkIfInventoryFull()
+    {
+        if (currentSlot == 5 && LevelManager.CurrentState == GameState.Lvl1) 
+        {
+            LevelManager.SetGameState(GameState.TransitionLvl2); // 🦩🦩🦩 --> A changer pour transition ??? 
+            Debug.Log($"State changed for : {LevelManager.CurrentState}");
+            currentSlot = 0;
+            Invoke("ClearInventory", 2f);
+            LoadSceneManager.ChangeScene("TransitionOne");
+            Debug.Log($"current slot = {currentSlot}");
+            return; 
+        }
+        //  🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 //
+        // ATTENTION CA RESTE PAS LA !!!! GAMETEST POUR CHANGEMENTS DE GAMESTATE
+        // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 //
+        else if (currentSlot == 5 && LevelManager.CurrentState == GameState.Lvl2)
+        {
+            LevelManager.SetGameState(GameState.TransitionLvl3);
+            Debug.Log($"State changed for : {LevelManager.CurrentState}");
+            currentSlot = 0;
+            Invoke("ClearInventory", 2f);
+            LoadSceneManager.ChangeScene("TransitionTwo");
+            return;
+        }
+        else if (currentSlot == 5 && LevelManager.CurrentState == GameState.Lvl3)
+        {
+            LevelManager.SetGameState(GameState.Conclusion);
+            Debug.Log($"State changed for : {LevelManager.CurrentState}");
+            currentSlot = 0;
+            Invoke("ClearInventory", 2f);
+            LoadSceneManager.ChangeScene("Conclusion");
+            return;
+        }
     }
 }

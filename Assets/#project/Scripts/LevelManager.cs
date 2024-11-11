@@ -8,7 +8,6 @@ public static class LevelManager
     {
         CurrentState = newState; 
     }
-    
     public static GameState GetGameState()
     {
         return CurrentState; 

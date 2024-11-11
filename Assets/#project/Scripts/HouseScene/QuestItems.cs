@@ -33,8 +33,3 @@ public class QuestItem : MonoBehaviour
         }  
     }
 }
-
-// 👽👽👽👽👽 -- Ici on va mettre un switch ou une conditonnelle pour que les questItems
-// correspondent : if questItem number = lvlnumber alors on peut addToInventory
-// Sinon c'est le texte qui va avec (???) 👽👽👽👽👽
-// VOIR SI ON PEUT CHOISIR UN COMPORTEMENT OU L AUTRE POUR LE COLLIDER ????
