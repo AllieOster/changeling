@@ -18,7 +18,6 @@ public class InventoryManager : MonoBehaviour
 
     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     */
-    public GameData gameData; 
     [SerializeField] GameObject[] slots;
     public int currentSlot = 0;
 
@@ -64,7 +63,7 @@ public class InventoryManager : MonoBehaviour
             Debug.Log($"State changed for : {LevelManager.CurrentState}");
             currentSlot = 0;
             Invoke("ClearInventory", 2f);
-            LoadSceneManager.ChangeScene("TransitionOne", gameData);
+            LoadSceneManager.ChangeScene("TransitionOne");
             Debug.Log($"current slot = {currentSlot}");
             return; 
         }

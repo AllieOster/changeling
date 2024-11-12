@@ -3,8 +3,6 @@ using UnityEngine.UI;
 
 public class ButtonToLvl2 : MonoBehaviour
 {
-    public GameData gameData; 
-
     void Start()
     {
         Button button = GetComponent<Button>();
@@ -19,6 +17,6 @@ public class ButtonToLvl2 : MonoBehaviour
     {
         LevelManager.SetGameState(GameState.Lvl2);
         Debug.Log($"State = {LevelManager.CurrentState}");
-        LoadSceneManager.ChangeScene("HouseScene", gameData);
+        LoadSceneManager.ChangeScene("HouseScene");
     }
 }
