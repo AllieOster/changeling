@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonToLvl1 : MonoBehaviour
+public class ButtonToIntro : MonoBehaviour
 {
     public GameData gameData; 
 
@@ -9,16 +9,17 @@ public class ButtonToLvl1 : MonoBehaviour
     {
         Button button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonClick);
+        gameData.collectedItems.Clear();
     }
 
     void OnButtonClick()
     {
-        Invoke("LoadLvl1", 1f);
+        Invoke("LoadIntro", 1f);
     }
-    void LoadLvl1()
+    void LoadIntro()
     {
-        LevelManager.SetGameState(GameState.Lvl1);
+        LevelManager.SetGameState(GameState.Intro);
         Debug.Log($"State = {LevelManager.CurrentState}");
-        LoadSceneManager.ChangeScene("HouseScene", gameData);
+        LoadSceneManager.ChangeScene("Intro", gameData);
     }
 }

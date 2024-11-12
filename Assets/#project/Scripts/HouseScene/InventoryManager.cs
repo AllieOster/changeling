@@ -18,6 +18,7 @@ public class InventoryManager : MonoBehaviour
 
     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     */
+    public GameData gameData; 
     [SerializeField] GameObject[] slots;
     public int currentSlot = 0;
 
@@ -63,30 +64,9 @@ public class InventoryManager : MonoBehaviour
             Debug.Log($"State changed for : {LevelManager.CurrentState}");
             currentSlot = 0;
             Invoke("ClearInventory", 2f);
-            LoadSceneManager.ChangeScene("TransitionOne");
+            LoadSceneManager.ChangeScene("TransitionOne", gameData);
             Debug.Log($"current slot = {currentSlot}");
             return; 
-        }
-        //  🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 //
-        // ATTENTION CA RESTE PAS LA !!!! GAMETEST POUR CHANGEMENTS DE GAMESTATE
-        // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥 //
-        else if (currentSlot == 5 && LevelManager.CurrentState == GameState.Lvl2)
-        {
-            LevelManager.SetGameState(GameState.TransitionLvl3);
-            Debug.Log($"State changed for : {LevelManager.CurrentState}");
-            currentSlot = 0;
-            Invoke("ClearInventory", 2f);
-            LoadSceneManager.ChangeScene("TransitionTwo");
-            return;
-        }
-        else if (currentSlot == 5 && LevelManager.CurrentState == GameState.Lvl3)
-        {
-            LevelManager.SetGameState(GameState.Conclusion);
-            Debug.Log($"State changed for : {LevelManager.CurrentState}");
-            currentSlot = 0;
-            Invoke("ClearInventory", 2f);
-            LoadSceneManager.ChangeScene("Conclusion");
-            return;
         }
     }
 }
