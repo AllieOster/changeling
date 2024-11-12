@@ -24,8 +24,8 @@ public class CameraManager : MonoBehaviour
     public GameObject uiElements; // 📌
     public GameObject roomColliders; // 🔍
     public GameObject boardCollider; // 🔍
-    public GameObject itemsLvl1;
-    public GameObject itemsLvl2;
+    public GameObject itemsLvl1; // 🌸
+    public GameObject itemsLvl2; // 🌸
     void Start()
     {
         SetCameraActive(globalViewCamera); // 📷
@@ -54,12 +54,12 @@ public class CameraManager : MonoBehaviour
         {
             if (LevelManager.CurrentState == GameState.Lvl2)
             {
-                itemsLvl1.SetActive(false);
+                itemsLvl1.SetActive(false); // 🌸
             }
             else if (LevelManager.CurrentState == GameState.Lvl3)
             {
-                itemsLvl1.SetActive(false);
-                itemsLvl2.SetActive(false);
+                itemsLvl1.SetActive(false); // 🌸
+                itemsLvl2.SetActive(false); // 🌸
             }
         }
         if(activeCamera == lobbyCamera) // 📷
