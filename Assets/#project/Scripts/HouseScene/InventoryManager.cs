@@ -58,7 +58,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (currentSlot == 5 && LevelManager.CurrentState == GameState.Lvl1) 
         {
-            LevelManager.SetGameState(GameState.TransitionLvl2); // 🦩🦩🦩 --> A changer pour transition ??? 
+            LevelManager.SetGameState(GameState.TransitionLvl2); 
             Debug.Log($"State changed for : {LevelManager.CurrentState}");
             currentSlot = 0;
             Invoke("ClearInventory", 2f);
