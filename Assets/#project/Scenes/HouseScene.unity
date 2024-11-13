@@ -176,6 +176,8 @@ MonoBehaviour:
   uiElements: {fileID: 1993370572}
   roomColliders: {fileID: 40670025}
   boardCollider: {fileID: 2122662151}
+  itemsLvl1: {fileID: 687210440}
+  itemsLvl2: {fileID: 725929488}
 --- !u!1 &32815097
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +191,7 @@ GameObject:
   - component: {fileID: 32815100}
   - component: {fileID: 32815099}
   m_Layer: 0
-  m_Name: Isometric Diamond
+  m_Name: ProjoT1
   m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -463,7 +465,7 @@ GameObject:
   - component: {fileID: 120874606}
   - component: {fileID: 120874605}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: Lamp
   m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1099,7 +1101,7 @@ GameObject:
   - component: {fileID: 377479085}
   - component: {fileID: 377479084}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Paper2
   m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1316,8 +1318,9 @@ GameObject:
   - component: {fileID: 420410955}
   - component: {fileID: 420410958}
   - component: {fileID: 420410957}
+  - component: {fileID: 420410959}
   m_Layer: 0
-  m_Name: obj2
+  m_Name: Cardboard
   m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1457,6 +1460,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &420410959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420410954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ab0030abc5cea48b38b8321ced49e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 2081599669}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1597,7 +1613,7 @@ GameObject:
   - component: {fileID: 531274172}
   - component: {fileID: 531274171}
   m_Layer: 0
-  m_Name: Square
+  m_Name: ProjoT2
   m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1897,7 +1913,7 @@ GameObject:
   - component: {fileID: 600082000}
   - component: {fileID: 600081999}
   m_Layer: 0
-  m_Name: Hexagon Pointed-Top
+  m_Name: CutThing
   m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2045,8 +2061,9 @@ GameObject:
   - component: {fileID: 608342628}
   - component: {fileID: 608342631}
   - component: {fileID: 608342630}
+  - component: {fileID: 608342632}
   m_Layer: 0
-  m_Name: Hexagon Flat-Top
+  m_Name: Paint
   m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2170,6 +2187,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &608342632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608342627}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ab0030abc5cea48b38b8321ced49e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 2081599669}
 --- !u!1 &639032672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,7 +2356,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 687210441}
-  - component: {fileID: 687210442}
   m_Layer: 0
   m_Name: QuestObjectsLvl1
   m_TagString: QuestItemsLvl1
@@ -2354,19 +2383,6 @@ Transform:
   - {fileID: 961479154}
   m_Father: {fileID: 1288736875}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &687210442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687210440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ab0030abc5cea48b38b8321ced49e0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryManager: {fileID: 2081599669}
 --- !u!1 &725929488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2744,8 +2760,9 @@ GameObject:
   - component: {fileID: 961479154}
   - component: {fileID: 961479157}
   - component: {fileID: 961479156}
+  - component: {fileID: 961479158}
   m_Layer: 0
-  m_Name: Isometric Diamond
+  m_Name: Brush
   m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2867,6 +2884,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &961479158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 961479153}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ab0030abc5cea48b38b8321ced49e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 2081599669}
 --- !u!1 &977942721
 GameObject:
   m_ObjectHideFlags: 0
@@ -3406,7 +3436,7 @@ GameObject:
   - component: {fileID: 1169208852}
   - component: {fileID: 1169208851}
   m_Layer: 0
-  m_Name: Isometric Diamond
+  m_Name: Paper3
   m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3624,8 +3654,9 @@ GameObject:
   - component: {fileID: 1197610966}
   - component: {fileID: 1197610967}
   - component: {fileID: 1197610969}
+  - component: {fileID: 1197610970}
   m_Layer: 0
-  m_Name: obj1
+  m_Name: Ciscors
   m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3733,6 +3764,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &1197610970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1197610965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ab0030abc5cea48b38b8321ced49e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 2081599669}
 --- !u!1 &1248005560
 GameObject:
   m_ObjectHideFlags: 0
@@ -3746,7 +3790,7 @@ GameObject:
   - component: {fileID: 1248005563}
   - component: {fileID: 1248005562}
   m_Layer: 0
-  m_Name: 9-Sliced
+  m_Name: Paper1
   m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3910,7 +3954,7 @@ GameObject:
   - component: {fileID: 1269128315}
   - component: {fileID: 1269128314}
   m_Layer: 0
-  m_Name: Hexagon Pointed-Top
+  m_Name: Paper4
   m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4060,7 +4104,7 @@ GameObject:
   - component: {fileID: 1276661864}
   - component: {fileID: 1276661863}
   m_Layer: 0
-  m_Name: 9-Sliced
+  m_Name: ScrewDriver
   m_TagString: QuestItemsLvl3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4258,8 +4302,9 @@ GameObject:
   - component: {fileID: 1327834999}
   - component: {fileID: 1327835002}
   - component: {fileID: 1327835001}
+  - component: {fileID: 1327835003}
   m_Layer: 0
-  m_Name: Hexagon Pointed-Top
+  m_Name: Rope
   m_TagString: QuestItemsLvl1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4383,6 +4428,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1327835003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1327834998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ab0030abc5cea48b38b8321ced49e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 2081599669}
 --- !u!1 &1381870867
 GameObject:
   m_ObjectHideFlags: 0
@@ -5541,7 +5599,7 @@ GameObject:
   - component: {fileID: 1862695120}
   - component: {fileID: 1862695119}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Paper5
   m_TagString: QuestItemsLvl2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
