@@ -20,6 +20,7 @@ public class InventoryManager : MonoBehaviour
     */
     [SerializeField] GameObject[] slots;
     public int currentSlot = 0;
+
     public void AddToInventory(GameObject item)
     {
             SpriteRenderer itemSprite = item.GetComponent<SpriteRenderer>();
@@ -34,6 +35,7 @@ public class InventoryManager : MonoBehaviour
 
             if(slotSprite.sprite == null)
             {
+                slots[currentSlot].tag = item.tag;
                 slotSprite.sprite = itemSprite.sprite; 
                 item.SetActive(false);
                 currentSlot++;

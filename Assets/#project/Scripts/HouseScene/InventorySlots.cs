@@ -6,4 +6,5 @@ public class Slots : MonoBehaviour
 {
     public int slotIndex;
     public InventoryManager inventoryManager;
+    public string holdItem;
 }
