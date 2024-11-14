@@ -95,7 +95,8 @@ public class InventoryManager : MonoBehaviour
     {
         StartCoroutine(ClearInventory());
     }
-    private int FindEmptyIndex(){
+    private int FindEmptyIndex()
+    {
         int index = -1;
 
         for(int i = 0; i < slots.Length; i++)
