@@ -27,7 +27,6 @@ public class InventoryManager : MonoBehaviour
 
     public void AddToInventory(GameObject item, int index = -1)
     {
-        
         if(index == -1)
         {
             index = FindEmptyIndex();
@@ -47,10 +46,14 @@ public class InventoryManager : MonoBehaviour
 
         SpriteRenderer slotSprite = slots[index].GetComponent<SpriteRenderer>();
 
+        QuestItem itemid = item.GetComponent<QuestItem>();
+
         slotSprite.sprite = itemSprite.sprite;
-        if(TryGetComponent(out QuestItem questItem))
+
+        if(itemid.itemID != null)
         {
-            itemsDict.Add(slots[index], questItem.itemID);
+            itemsDict.Add(slots[index], itemid.itemID);
+            Debug.Log("added to Dict Inventory");
         }
         else
         {
@@ -58,7 +61,9 @@ public class InventoryManager : MonoBehaviour
         }
         
         item.SetActive(false);
-        if(InventoryIsFull){
+
+        if(InventoryIsFull && LevelManager.CurrentState == GameState.Lvl1)
+        {
             whenInventoryIsFull?.Invoke();
         }
     }
@@ -74,9 +79,16 @@ public class InventoryManager : MonoBehaviour
                 slotSprite.sprite = null;
             }
         }
-
         itemsDict.Clear();
         Debug.Log("Inventory cleared.");
+
+        if (LevelManager.CurrentState == GameState.Lvl1)
+        {
+            LevelManager.SetGameState(GameState.TransitionLvl2);
+            Debug.Log($"State changed for : {LevelManager.CurrentState}");
+            yield return new WaitForSeconds(1f);
+            LoadSceneManager.ChangeScene("TransitionOne");
+        }
     }
 
     public void StartClearingInventory()
@@ -100,22 +112,6 @@ public class InventoryManager : MonoBehaviour
     {
         get{return FindEmptyIndex() == -1;}
     }
-
-    // public void checkIfInventoryFull()
-    // {
-    //     if (currentSlot == 5 && LevelManager.CurrentState == GameState.Lvl1) 
-    //     {
-    //         LevelManager.SetGameState(GameState.TransitionLvl2); 
-    //         Debug.Log($"State changed for : {LevelManager.CurrentState}");
-    //         currentSlot = 0;
-    //         Invoke("ClearInventory", 2f);
-    //         LoadSceneManager.ChangeScene("TransitionOne");
-    //         Debug.Log($"current slot = {currentSlot}");
-    //         return; 
-    //     }
-    // }
-
-
 
     // public void Swap()
     // {
