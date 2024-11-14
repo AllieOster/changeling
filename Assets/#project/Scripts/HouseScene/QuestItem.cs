@@ -7,6 +7,7 @@ using UnityEngine;
 public class QuestItem : MonoBehaviour
 {
     public InventoryManager inventoryManager;   
+    public string itemID;
     void OnMouseDown()
     {
         Debug.Log($"clicked on something with tag {this.gameObject.tag}");

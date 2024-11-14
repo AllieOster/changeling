@@ -8,7 +8,6 @@ public class ButtonToLvl2 : MonoBehaviour
         Button button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonClick);
     }
-
     void OnButtonClick()
     {
         Invoke("LoadLvl2", 1f);
