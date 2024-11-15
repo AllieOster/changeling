@@ -18,6 +18,7 @@ public class InventoryManager : MonoBehaviour
         ❤ Add things into the inventory (change sprite for the item sprite)
         ❤ Clear Inventory when full
         ❤ Change GameState when full
+        --> https://pbs.twimg.com/profile_images/1080982447939043329/-LKZ_WpQ_200x200.jpg
 
     ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━༻⭐️༺━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
     */
@@ -59,12 +60,13 @@ public class InventoryManager : MonoBehaviour
         {
             Debug.LogWarning("Pas de questItem!!!");
         }
+        Debug.Log($"{itemid.itemID} added");
         
         item.SetActive(false);
 
-        if(InventoryIsFull && LevelManager.CurrentState == GameState.Lvl1)
+        if(InventoryIsFull)
         {
-            whenInventoryIsFull?.Invoke();
+            StartClearingInventory();
         }
     }
     public IEnumerator ClearInventory()
@@ -73,7 +75,6 @@ public class InventoryManager : MonoBehaviour
         foreach (GameObject slot in slots)
         {
             SpriteRenderer slotSprite = slot.GetComponent<SpriteRenderer>();
-
             if (slotSprite != null && slotSprite.sprite != null)
             {
                 slotSprite.sprite = null;
@@ -81,14 +82,8 @@ public class InventoryManager : MonoBehaviour
         }
         itemsDict.Clear();
         Debug.Log("Inventory cleared.");
-
-        if (LevelManager.CurrentState == GameState.Lvl1)
-        {
-            LevelManager.SetGameState(GameState.TransitionLvl2);
-            Debug.Log($"State changed for : {LevelManager.CurrentState}");
-            yield return new WaitForSeconds(1f);
-            LoadSceneManager.ChangeScene("TransitionOne");
-        }
+        yield return new WaitForSeconds(2f);
+        whenInventoryIsFull?.Invoke();
     }
 
     public void StartClearingInventory()
@@ -114,19 +109,37 @@ public class InventoryManager : MonoBehaviour
         get{return FindEmptyIndex() == -1;}
     }
 
-    // public void Swap()
-    // {
-        // Ici on va swiper avec 
-        /* 
-        --> SpriteRenderer
-        --> SlotIndex           // Replace "currentSlot" by slotIndex elsewhere ??? 
-        --> ItemID               
+    public void Swap(int index1, int index2)
+    {
+        Debug.Log("Tried to swap");
+        if (index1 < 0 || index1 >= slots.Length || index2 < 0 || index2 >= slots.Length)
+        {
+            Debug.LogWarning("Index invalide.");
+            return;
+        }
 
-        ---> Variable temporaire dans laquelle placer le sprite
-        ---> mettre le sprite n°1 dans le temporaire 
-        ---> mettre le sprite n°2 dans le n°1 
-        ---> mettre le temporaire dans le n°2
+        SpriteRenderer slotSprite1 = slots[index1].GetComponent<SpriteRenderer>();
+        SpriteRenderer slotSprite2 = slots[index2].GetComponent<SpriteRenderer>();
 
-        */
-    // }
+        if (slotSprite1 == null || slotSprite2 == null)
+        {
+            Debug.LogWarning("L'un des slots n'a pas de SpriteRenderer.");
+            return;
+        }
+
+        Sprite tempSprite = slotSprite1.sprite;
+        slotSprite1.sprite = slotSprite2.sprite;
+        slotSprite2.sprite = tempSprite;
+
+        if (itemsDict.ContainsKey(slots[index1]) && itemsDict.ContainsKey(slots[index2]))
+        {
+            string tempItemID = itemsDict[slots[index1]];
+            itemsDict[slots[index1]] = itemsDict[slots[index2]];
+            itemsDict[slots[index2]] = tempItemID;
+        }
+        else
+        {
+            Debug.LogWarning("L'un des slots n'a pas d'item associé dans le dictionnaire.");
+        }
+    }
 }
